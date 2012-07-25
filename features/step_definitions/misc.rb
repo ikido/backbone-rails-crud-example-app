@@ -11,11 +11,12 @@
   end
 end
 
-Если /^я захожу по адресу "(.*?)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Если /^я захожу по адресу "(.*?)"$/ do |path|
+  visit path
 end
 
 То /^я вижу следующие компании:$/ do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+  table.raw.flatten.each do |text|
+    page.should have_content text
+  end
 end
