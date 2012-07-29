@@ -1,0 +1,31 @@
+.page-header
+  %h1 
+    Компании
+    %small= link_to '+', '#', :class => 'btn btn-success', :style => 'margin-bottom: 10px', :id => 'add_company'
+
+%table.table.table-condensed
+  %thead
+    %tr
+      %th
+        %i.icon-star
+        Название
+      %th
+        %i.icon-envelope
+        Телефон
+      %th
+        %i.icon-home
+        Адрес
+      %th 
+        %i.icon-cog
+        Действия
+  %tbody
+  {{#companies}}
+  %tr
+    %td {{name}}
+    %td {{phone}}
+    %td {{address}}
+    %td
+      = link_to 'Изменить', '#'
+      &nbsp;
+      = link_to 'Бренды', '#'
+  {{/companies}}

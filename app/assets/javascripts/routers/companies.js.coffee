@@ -1,11 +1,13 @@
-class Phenomena.Routers.Companies extends Backbone.Router
+class Phenomena.Routers.Companies extends Support.SwappingRouter
 	routes:
 		'': 'index'
-		'companies/:id': 'show'
+		
+	initialize: ->
+		@collection = new Phenomena.Collections.Companies()
+		@collection.fetch()
+		
+		this.el = $("#container")
 
 	index: ->
-		view = new Phenomena.Views.CompaniesIndex()
-		$('#container').html(view.render().el)
-		
-	show: (id) ->
-		alert "Company #{id}"
+		view = new Phenomena.Views.CompaniesIndex(collection: @collection)
+		this.swap(view)

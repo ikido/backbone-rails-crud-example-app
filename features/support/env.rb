@@ -63,8 +63,10 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+Capybara.default_driver = :selenium
 Capybara.register_driver :selenium do |app| 
-  profile = Selenium::WebDriver::Firefox::Profile.new # только если мы хотим создать ноый профиль для FF. 
+  #profile = Selenium::WebDriver::Chrome::Profile.new # только если мы хотим создать ноый профиль для FF. 
   #Selenium::WebDriver::Firefox.path = File.expand_path('~/path/to/firefox') # можем не указывать, тогда будет вызван FF по умолчанию. 
-  Capybara::Selenium::Driver.new(app, :browser => :firefox, :profile => profile) 
+  Capybara::Selenium::Driver.new(app, :browser => :firefox) 
 end
+

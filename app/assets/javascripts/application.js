@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require backbone-support
+//= backbone-forms
 //= require hogan
 //
 //= require phenomena
