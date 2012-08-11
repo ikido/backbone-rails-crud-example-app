@@ -17,8 +17,14 @@
 //= require backbone-support
 //= backbone-forms
 //= require hogan
+//= require bootstrap-all
+//= require backbone-forms.min
+//= require backbone-forms-bootstrap
+//= require backbone.syphon.min
+//= require backbone.syphon.patch
 //
 //= require phenomena
+//= require phenomena.lib
 //
 //= require_tree ./templates
 //= require_tree ./views

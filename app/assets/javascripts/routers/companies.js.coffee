@@ -1,6 +1,7 @@
 class Phenomena.Routers.Companies extends Support.SwappingRouter
 	routes:
-		'': 'index'
+		'' : 'index'
+		'/companies' : 'index'
 		
 	initialize: ->
 		@collection = new Phenomena.Collections.Companies()

@@ -18,14 +18,4 @@
       %th 
         %i.icon-cog
         Действия
-  %tbody
-  {{#companies}}
-  %tr
-    %td {{name}}
-    %td {{phone}}
-    %td {{address}}
-    %td
-      = link_to 'Изменить', '#'
-      &nbsp;
-      = link_to 'Бренды', '#'
-  {{/companies}}
+  %tbody#companies

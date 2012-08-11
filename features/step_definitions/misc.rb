@@ -8,7 +8,6 @@
       :phone => t["телефон"],
       :address => t["адрес"]
     )
-    Rails.logger.info Company.all.inspect
   end
 end
 
@@ -26,15 +25,44 @@ end
   page.click_link link_text
 end
 
+Если /^я нажимаю на ссылку "(.*?)" после текста "(.*?)"$/ do |link_text, text|
+  page.click_link link_text
+end
+
 То /^я вижу текст "(.*?)"$/ do |text|
   page.should have_content text
 end
 
 То /^я вижу следующие поля:$/ do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+  table.raw.flatten.each do |field_name|
+    page.should have_field field_name
+  end
 end
 
-То /^я вижу кнопку "(.*?)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+То /^я вижу следующие поля и значения:$/ do |table|
+  table.hashes.each do |t|
+    page.should have_field(t["Поле"], :with => t["Значение"])
+  end
+end
+
+То /^я вижу ссылку "(.*?)"$/ do |button_text|
+  page.should have_link button_text
+end
+
+Если /^я заполняю следующие поля:$/ do |table|
+  table.hashes.each do |t|
+    page.fill_in t["Поле"], with: t["Значение"]
+  end
+end
+
+То /^я вижу компанию "(.*?)" в списке$/ do |company_name|
+  page.should have_content company_name
+end
+
+Если /^я заполняю поле "(.*?)" как "(.*?)"$/ do |field_name, field_value|
+  page.fill_in field_name, with: field_value
+end
+
+То /^я не вижу текст "(.*?)"$/ do |text|
+  page.should_not have_content text
 end

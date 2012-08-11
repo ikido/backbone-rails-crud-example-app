@@ -39,7 +39,6 @@ GEM
       ejs (~> 1.0.0)
       jquery-rails
       railties (>= 3.1)
-    backbone-support (0.2.0)
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -98,11 +97,6 @@ GEM
     gherkin (2.11.1)
       json (>= 1.4.6)
     haml (3.1.6)
-    haml-rails (0.3.4)
-      actionpack (~> 3.0)
-      activesupport (~> 3.0)
-      haml (~> 3.0)
-      railties (~> 3.0)
     haml_assets (0.1.0)
       haml
       tilt
@@ -168,6 +162,8 @@ GEM
       railties (>= 3.0)
       rspec (~> 2.10.0)
     rubyzip (0.9.9)
+    russian (0.6.0)
+      i18n (>= 0.5.0)
     sass (3.1.20)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -202,7 +198,6 @@ DEPENDENCIES
   autotest-growl
   autotest-rails
   backbone-on-rails
-  backbone-support
   capybara
   coffee-rails (~> 3.2.1)
   compass-rails
@@ -211,13 +206,13 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails (>= 3.3.0)
   faker
-  haml-rails
   haml_assets
   hogan_assets
   jquery-rails
   launchy (>= 2.1.0)
   rails (= 3.2.6)
   rspec-rails (>= 2.10.1)
+  russian
   sass-rails (~> 3.2.3)
   selenium-webdriver
   sqlite3

@@ -7,9 +7,7 @@ gem 'rails', '3.2.6'
 
 gem 'sqlite3'
 gem 'backbone-on-rails'
-gem 'backbone-support'
-gem 'backbone-forms'
-gem "haml-rails"
+gem 'russian'
 
 
 # Gems used only for assets and not required
